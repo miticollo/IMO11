@@ -1,0 +1,1 @@
+﻿Place Latest Cumulative Update (LCU) related files in this folder to be detected automatically

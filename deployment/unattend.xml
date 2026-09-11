@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <servicing></servicing>
+    <settings pass="oobeSystem">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <OOBE>
+                <HideEULAPage>true</HideEULAPage>
+                <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+                <ProtectYourPC>3</ProtectYourPC>
+            </OOBE>
+            <UserAccounts>
+                <AdministratorPassword>
+                    <Value>put here your password</Value>
+                    <PlainText>true</PlainText>
+                </AdministratorPassword>
+            </UserAccounts>
+        </component>
+    </settings>
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <RunSynchronous>
+                <RunSynchronousCommand wcm:action="add">
+                    <Description>Disable cloud-delivered protection</Description>
+                    <Order>1</Order>
+                    <Path>reg.exe add &quot;HKLM\SOFTWARE\Microsoft\Windows Defender\Spynet&quot; /v SpyNetReporting /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>2</Order>
+                    <Description>NeverSend Automatic Samples Submission for Microsoft Defender Antivirus</Description>
+                    <Path>reg.exe add &quot;HKLM\SOFTWARE\Microsoft\Windows Defender\Spynet&quot; /v SubmitSamplesConsent /t REG_DWORD /d 2 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>3</Order>
+                    <Description>Clear virtual memory pagefile</Description>
+                    <Path>reg.exe add &quot;HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&quot; /v ClearPageFileAtShutdown /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>6</Order>
+                    <Path>powershell.exe -WindowStyle Hidden -ep unrestricted -nop -NonInteractive -File &quot;%windir%\Setup\Scripts\schtasks.ps1&quot;</Path>
+                    <Description>Task Scheduler</Description>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>7</Order>
+                    <Description>Patch ms-cxh</Description>
+                    <Path>powershell.exe -WindowStyle Hidden -ep unrestricted -nop -NonInteractive -File &quot;%windir%\Setup\Scripts\ms-cxh.ps1&quot;</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>8</Order>
+                    <Description>Customizing Balanced Power Plan...</Description>
+                    <Path>powershell.exe -WindowStyle Hidden -ep unrestricted -nop -NonInteractive -File &quot;%windir%\Setup\Scripts\PowerOptions.ps1&quot;</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>4</Order>
+                    <Description>Disable GamebarPresenceWriter - proper method by AveYo</Description>
+                    <Path>cmd.exe /c &quot;%windir%\Setup\Scripts\disable_gamebarpresencewriter.bat&quot;</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>5</Order>
+                    <Description>ToggleGamebar - properly by AveYo</Description>
+                    <Path>powershell.exe -WindowStyle Hidden -ep unrestricted -nop -NonInteractive -File &quot;%windir%\Setup\Scripts\ToggleGameBarproperly.ps1&quot;</Path>
+                </RunSynchronousCommand>
+            </RunSynchronous>
+        </component>
+    </settings>
+    <settings pass="offlineServicing">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ConfigureChatAutoInstall>false</ConfigureChatAutoInstall>
+        </component>
+    </settings>
+    <cpi:offlineImage cpi:source="" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+</unattend>

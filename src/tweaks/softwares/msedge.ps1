@@ -1,0 +1,7 @@
+#Requires -Version 5.1
+
+Write-Output "Do not allow Microsoft Edge to pre-launch at Windows startup, when the system is idle, and each time Microsoft Edge is closed"
+Set-RegistryValue 'HKLM\zSOFTWARE\Policies\Microsoft\MicrosoftEdge\Main' -ValueName 'AllowPrelaunch' -Type 'REG_DWORD' -Data '0'
+
+Write-Output "Do not allow Microsoft Edge to start and load the Start and New Tab page at Windows startup and each time Microsoft Edge is closed"
+Set-RegistryValue 'HKLM\zSOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader' -ValueName 'AllowTabPreloading' -Type 'REG_DWORD' -Data '0'

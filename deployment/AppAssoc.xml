@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DefaultAssociations>
+  <Association Identifier=".bmp" ProgId="Paint.Picture" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".dib" ProgId="Paint.Picture" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".gif" ProgId="giffile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".jfif" ProgId="pjpegfile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".jpe" ProgId="jpegfile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".jpeg" ProgId="jpegfile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".jpg" ProgId="jpegfile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".png" ProgId="pngfile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".tif" ProgId="PhotoViewer.FileAssoc.Tiff" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".tiff" ProgId="PhotoViewer.FileAssoc.Tiff" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".wdp" ProgId="wdpfile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".jxr" ProgId="wdpfile" ApplicationName="Windows Photo Viewer" />
+  <Association Identifier=".txt" ProgId="txtfile" ApplicationName="Notepad" OverwriteOnVersionMax="41" OverwriteIfProgIdIs="textfile" />
+  <Association Identifier=".iso" ProgId="Windows.IsoFile" ApplicationName="File Explorer" />
+</DefaultAssociations>
