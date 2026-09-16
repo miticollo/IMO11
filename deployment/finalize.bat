@@ -79,6 +79,8 @@ if ($decision -eq 0) {
     # https://w18.monkrus.ws/2026/06/adobe-acrobat-2026-v26121651-x64.html#cc-113609187
     # https://w18.monkrus.ws/2026/05/adobe-acrobat-2026-v26121563-x64.html#cc-113547130 this workflow because https://w18.monkrus.ws/2026/04/adobe-acrobat-2026-v26121367-x64.html#cc-113412441
     # https://w18.monkrus.ws/2026/04/adobe-acrobat-2026-v26121367-x64.html#cc-113411871
+	# https://w18.monkrus.ws/2024/04/adobe-acrobat-pro-2024-v24120643-x64.html#cc-110170699
+	# https://w18.monkrus.ws/2024/07/adobe-acrobat-pro-2024-v24220933-x64.html#cc-110696246
 
     # HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Exclusions\Paths
     Start-Process -FilePath 'powershell' -ArgumentList '-ep unrestricted -nop -c "Add-MpPreference -ExclusionPath ''%ProgramFiles%\Adobe\Acrobat DC\''"' -Verb RunAs -Wait
