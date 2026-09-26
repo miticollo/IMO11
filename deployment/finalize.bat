@@ -94,7 +94,7 @@ if ($decision -eq 1) {
     # This question is useless because answer is always YES. But it becomes useful when you test the current ISO!
     $decision = $Host.UI.PromptForChoice('', 'Do you want to install Adobe Reader DC?', @('&Yes'; '&No'), 0)
     if ($decision -eq 0) {
-        irm https://raw.githubusercontent.com/farag2/Utilities/refs/heads/master/Download/Acrobat_Reader_DC_x64.ps1 | iex
+        irm https://gist.github.com/miticollo/ffafe6530d13522761871a372e98f5be/raw/9fb5c7d5ad472f7851a476a1aea378233baf8872/Acrobat_Pro_DC_x64.ps1 | iex
         Invoke-Item -Path "$DownloadsFolder\AcroRdrDCx64"
     }
 }
@@ -108,3 +108,4 @@ if ($decision -eq 0) {
 }
 
 Remove-Item "$env:PUBLIC\Desktop\finalize.bat"
+
