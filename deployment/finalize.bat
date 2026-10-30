@@ -60,7 +60,7 @@ Write-Output ' '
 $decision = $Host.UI.PromptForChoice('', 'Do you want to install Google Chrome?', @('&Yes'; '&No'), 1)
 if ($decision -eq 0) {
     irm https://raw.githubusercontent.com/farag2/Utilities/refs/heads/master/Download/Chrome_Setup.msi.ps1 | iex
-	Remove-Item -Path "$DownloadsFolder\googlechromestandaloneenterprise64.msi" -Force
+    Remove-Item -Path "$DownloadsFolder\googlechromestandaloneenterprise64.msi" -Force
 }
 
 # https://wiki.dbzer0.com/genp-guides/guide/#wiki-toc-1-hosts-file-block-list-updated-regularly
