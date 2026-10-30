@@ -38,6 +38,9 @@ Write-Output "Disable Windows Platform Binary Table Execution (WPBT)"
 # https://download.microsoft.com/download/8/A/2/8A2FB72D-9B96-4E2D-A559-4A27CF905A80/windows-platform-binary-table.docx
 Set-RegistryValue 'HKLM\zSYSTEM\ControlSet001\Control\Session Manager' -ValueName 'DisableWpbtExecution' -Type 'REG_DWORD' -Data '1'
 
+Write-Output "Turn off Bluetooth"
+Set-RegistryValue 'HKLM\zSYSTEM\ControlSet001\Services\bthserv\Parameters\BluetoothControlPanelTasks' -ValueName 'State' -Type 'REG_DWORD' -Data '0'
+
 Write-Output "Do not allow Automatic Update of Speech Data"
 Set-RegistryValue 'HKLM\zSOFTWARE\Policies\Microsoft\Speech' -ValueName 'AllowSpeechModelUpdate' -Type 'REG_DWORD' -Data '0'
 
