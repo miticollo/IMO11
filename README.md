@@ -54,6 +54,10 @@ There are also two important improvements.
 2. Customize `SetupLogoff.ps1` to run a PowerShell script before logoff from defaultuser0.
    - For example, switch the first local account from Administrator to standard!
 
+## TODO
+
+- [ ] Examine `.inf` files
+
 <details>
 <summary>Edited README from <code>tiny11</code></summary>
 
