@@ -29,7 +29,6 @@ This project was born as a (private) fork of [`tiny11`](https://github.com/ntdev
    - Disable every service related to Xbox.
    - Completely disable automatic updates and upgrades.
    - Disable the lock screen through Group Policy.
-   - Prevent Windows Update from automatically downloading drivers.
    - Customize keys and values for some software (e.g., Windows PhotoViewer, 7-Zip, etc.).
    - ...
  9. Improve privacy and disable more telemetry.
