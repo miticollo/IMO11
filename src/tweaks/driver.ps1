@@ -2,10 +2,6 @@
 
 # https://www.catalog.update.microsoft.com/Faq.aspx#HowToSearch
 
-Write-Output "Do not include drivers with Windows Update"
-# https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/manage/windows-autopatch-driver-and-firmware-update-programmatic-controls#policies-that-exclude-drivers-from-windows-update-for-a-device
-Set-RegistryValue 'HKLM\zSOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' -ValueName 'ExcludeWUDriversInQualityUpdate' -Type 'REG_DWORD' -Data '1'
-
 Write-Output "Prevent automatic download of applications associated with device metadata"
 Set-RegistryValue 'HKLM\zSOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata' -ValueName 'PreventDeviceMetadataFromNetwork' -Type 'REG_DWORD' -Data '1'
 
