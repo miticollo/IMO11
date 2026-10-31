@@ -44,7 +44,8 @@ if %errlvl%==0 goto :MENU
 echo.
 echo Apply-Image.bat "%IMAGE_FILE%"
 call Apply-Image.bat "%IMAGE_FILE%" || goto :MENU
-if defined PEDRIVERS_FOLDER dism.exe /Add-Driver /Image:W:\ /Driver:"%PEDRIVERS_FOLDER%" /Recurse /ForceUnsigned
+rem https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14?view=windows-11#add-driver
+if defined PEDRIVERS_FOLDER dism.exe /Add-Driver /Image:W:\ /Driver:"%PEDRIVERS_FOLDER%" /Recurse /ForceUnsigned && echo.
 pause
 goto :MENU
 
