@@ -5,13 +5,14 @@ SETLOCAL EnableDelayedExpansion
 for %%d in (C D E F G H I J K L M N O P Q T U V Y Z) do (
 if exist %%d:\sources\install.wim set "IMAGE_FILE=%%d:\sources\install.wim"
 if exist %%d:\sources\install.esd set "IMAGE_FILE=%%d:\sources\install.esd"
-if exist %%d:\$WinPEDriver$ set "PEDRIVERS_FOLDER=%%d:\$WinPEDriver$"
+if exist %%d:\$WinPEDriver$ set "WINPE_FOLDER=%%d:\$WinPEDriver$"
+if exist %%d:\$OfflineDriver$ set "OFFLINE_FOLDER=%%d:\$OfflineDriver$"
 )
 if not defined IMAGE_FILE echo Could not locate install.wim or install.esd. & pause & exit /b 1
 
 rem Install drivers from $WinPEDriver$ folder
-if defined PEDRIVERS_FOLDER (
-for /R %PEDRIVERS_FOLDER% %%f IN (*.inf) do drvload.exe "%%f"
+if defined WINPE_FOLDER (
+for /R %WINPE_FOLDER% %%f IN (*.inf) do drvload.exe "%%f"
 )
 
 set "options[1]=Y" && set "options[2]=N"
@@ -45,7 +46,10 @@ echo.
 echo Apply-Image.bat "%IMAGE_FILE%"
 call Apply-Image.bat "%IMAGE_FILE%" || goto :MENU
 rem https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14?view=windows-11#add-driver
-if defined PEDRIVERS_FOLDER dism.exe /Add-Driver /Image:W:\ /Driver:"%PEDRIVERS_FOLDER%" /Recurse /ForceUnsigned && echo.
+if defined WINPE_FOLDER dism.exe /Add-Driver /Image:W:\ /Driver:"%WINPE_FOLDER%" /Recurse /ForceUnsigned
+if defined OFFLINE_FOLDER (
+dism.exe /Add-Driver /Image:W:\ /Driver:"%OFFLINE_FOLDER%" /Recurse /ForceUnsigned && echo.
+) else if defined WINPE_FOLDER ( echo. ) 
 pause
 goto :MENU
 
