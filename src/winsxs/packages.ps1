@@ -24,8 +24,6 @@
         'Microsoft-Windows-Media-Format',
         # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-media-streaming
         'Microsoft-Windows-Media-Streaming',
-        # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-mediaplayback-oc
-        'Microsoft-Windows-MediaPlayback-OC',
         # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-webcamexperience
         'Microsoft-Windows-WebcamExperience',
         # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-winsatmediafiles
