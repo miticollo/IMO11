@@ -18,18 +18,8 @@
 
     # https://support.microsoft.com/en-us/topic/media-feature-pack-for-windows-10-n-may-2020-ebbdf559-b84c-0fc2-bd51-e23c9f6a4439
     $Common_RegulatedPackages = @(
-        # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-media-foundation
-        'Microsoft-Media-Foundation',
-        # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-media-format
-        'Microsoft-Windows-Media-Format',
-        # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-media-streaming
-        'Microsoft-Windows-Media-Streaming',
         # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-mediaplayback-oc
-        'Microsoft-Windows-MediaPlayback-OC',
-        # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-webcamexperience
-        'Microsoft-Windows-WebcamExperience',
-        # https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-winsatmediafiles
-        'Microsoft-Windows-WinSATMediaFiles'
+        'Microsoft-Windows-MediaPlayback-OC'
     )
     $removablePackages += $Common_RegulatedPackages
 
